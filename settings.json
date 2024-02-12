@@ -31,9 +31,19 @@
     // >---- Text generation settings ----<
     "Text-Generation": {
         "max_tokens": 64,
-        "Temperature": 1.33,
+        "temperature": 1.33,
         "top_p": 0.33,
         "stop": ["\n", ".", "INST"],
         "seed": 42
+    },
+
+    // >---- Test settings ----<
+    "Test-Settings": {
+        "Model-Name": "laserxtral-Q3_K_XS.gguf",
+        "Correctness": {
+            "Itterations": 1000,
+            "Seed": 128,
+            "Number-Range": [1, 1000000]
+        }
     }
 }

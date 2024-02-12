@@ -1,9 +1,15 @@
-seed = 128
-num_range = (0, 1_000_000)
+import json5 as json
 
-N_test = 1000
-model_name = "laserxtral-Q3_K_XS.gguf"
+# Load settings
+settings = json.load(open('settings.json'))
 
+seed = settings['Test-Settings']['Correctness']['Seed']
+num_range = settings['Test-Settings']['Correctness']['Number-Range']
+
+N_test = settings['Test-Settings']['Correctness']['Itterations']
+model_name = settings['Test-Settings']['Model-Name']
+
+# Load backend and dependecies
 import Backend
 import num2words
 import numpy as np
@@ -54,8 +60,3 @@ clear()
 print("Results:")
 print(f"Time elapsed: {str(datetime.timedelta(seconds=int(time_elapsed)))}")
 print(f"Accuracy: {correct / N_test * 100:.2f}%")
-
-# Save the results
-with open("Correctness.txt", "a") as f:
-    f.write(f"Model {model_name}: {correct / N_test * 100:.2f}% out of {N_test} iterations\n")
-    f.write(f"Time elapsed: {str(datetime.timedelta(seconds=int(time_elapsed)))}\n")

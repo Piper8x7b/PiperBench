@@ -60,7 +60,7 @@ elif settings['Backend'] == 'langchain':
             "f_16_kb": settings['Backend-Settings']['Langchain-Settings']['f_16_kb']
         },
 
-        temperature = settings['Text-Generation']['Temperature'],
+        temperature = settings['Text-Generation']['temperature'],
         top_p = settings['Text-Generation']['top_p'],
         stop = settings['Text-Generation']['stop']
     )
