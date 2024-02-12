@@ -1,3 +1,9 @@
+"""
+The first benchmark in the PiperBench project.
+
+This benchmark tests the backend's ability to convert written numbers in text to digits.
+"""
+
 import json5 as json
 
 # Load settings
@@ -6,7 +12,7 @@ settings = json.load(open('settings.json'))
 seed = settings['Test-Settings']['Correctness']['Seed']
 num_range = settings['Test-Settings']['Correctness']['Number-Range']
 
-N_test = settings['Test-Settings']['Correctness']['Itterations']
+N_test = settings['Test-Settings']['Iterations']
 model_name = settings['Test-Settings']['Model-Name']
 
 # Load backend and dependecies
