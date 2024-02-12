@@ -19,3 +19,7 @@ Parameters used:
 |mistral-7b-instruct-v0.2.Q5_K_M.gguf | 65.80% | 1000 | 0:21:25 |
 |neuralbeagle14-7b.Q5_K_M.gguf | 46.50% | 1000 | 0:16:13 |
 |laserxtral-Q3_K_XS.gguf | 45.10% | 1000 | 0:36:00 |
+
+ # Creddit
+**Big thanks** to [llmperf](https://github.com/ray-project/llmperf) for sprouting the idea of the first benchmark "Correctness.py"
+I most likely would of not had the idea for this project without llmperf!
