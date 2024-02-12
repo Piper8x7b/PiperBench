@@ -39,7 +39,6 @@
 
     // >---- Test settings ----<
     "Test-Settings": {
-        "Model-Name": "laserxtral-Q3_K_XS.gguf",
         "Iterations": 1000,
         "Seed": 128,
         "Correctness": {

@@ -13,7 +13,6 @@ seed = settings['Test-Settings']['Seed']
 num_range = settings['Test-Settings']['Correctness']['Number-Range']
 
 N_test = settings['Test-Settings']['Iterations']
-model_name = settings['Test-Settings']['Model-Name']
 
 # Load the backend and dependecies
 import Backend
