@@ -1,0 +1,39 @@
+{
+    // >---- Backend controlls what service is used to generate text ----<
+    // Options:
+    // - text-generation-webui (default, requires api to be enabled in the webui)
+    // - langchain (requires langchain to be installed and langchain-Model to be set)
+    // - openai (requires OpenAI-key and OpenAI-Model to be set)
+    "Backend": "text-generation-webui",
+    "Backend-Settings": {
+        // WebUI-API is only needed if the backend is set to text-generation-webui
+        "WebUI-API": "http://127.0.0.1:5000/v1/completions",
+        
+        // Langchain-Model is only needed if the backend is set to langchain
+        "Langchain-Model": "c:\\AI-Infrence\\text-generation-webui\\models\\mistral-7b-instruct-v0.2.Q8_0.gguf",
+        // Langchain-Settings is only needed if the backend is set to langchain
+        "Langchain-Settings": {
+            "n_gpu_layers": 128,
+            // If set too low the model will forget how to play the game
+            // Default is 2048 because generaly its the smallest n_ctx models are trained on
+            "n_ctx": 2048,
+            "n_batch": 512,
+            "f_16_kb": true,
+            "verbose": true
+        },
+
+        // OpenAI-key is only needed if the backend is set to openai
+        "OpenAI-key": "",
+        // OpenAI-Model is only needed if the backend is set to openai
+        "OpenAI-Model": "gpt-3.5-turbo"
+    },
+
+    // >---- Text generation settings ----<
+    "Text-Generation": {
+        "max_tokens": 64,
+        "Temperature": 1.33,
+        "top_p": 0.33,
+        "stop": ["\n", ".", "INST"],
+        "seed": 42
+    }
+}
