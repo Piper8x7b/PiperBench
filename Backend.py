@@ -33,7 +33,7 @@ if settings['Backend'] == 'text-generation-webui':
         data = {
             "prompt": prompt,
             "max_tokens": settings['Text-Generation']['max_tokens'],
-            "temperature": settings['Text-Generation']['Temperature'],
+            "temperature": settings['Text-Generation']['temperature'],
             "top_p": settings['Text-Generation']['top_p'],
             "stop": settings['Text-Generation']['stop']
         }
@@ -100,7 +100,7 @@ elif settings['Backend'] == 'openai':
         completion = client.chat.completions.create(
             model=settings['Backend-Settings']['OpenAI-Model'],
             max_tokens=settings['Text-Generation']['max_tokens'],
-            temperature=settings['Text-Generation']['Temperature'],
+            temperature=settings['Text-Generation']['temperature'],
             top_p=settings['Text-Generation']['top_p'],
             stop=settings['Text-Generation']['stop'],
             messages=[

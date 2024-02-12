@@ -9,13 +9,13 @@ import json5 as json
 # Load settings
 settings = json.load(open('settings.json'))
 
-seed = settings['Test-Settings']['Correctness']['Seed']
+seed = settings['Test-Settings']['Seed']
 num_range = settings['Test-Settings']['Correctness']['Number-Range']
 
 N_test = settings['Test-Settings']['Iterations']
 model_name = settings['Test-Settings']['Model-Name']
 
-# Load backend and dependecies
+# Load the backend and dependecies
 import Backend
 import num2words
 import numpy as np
@@ -38,7 +38,7 @@ def TestOne():
     prompt, number = GeneratePrompt()
     answer = Backend.Generate(prompt)
 
-    #get just the number
+    # Remove all non-digit characters
     result = re.sub('[^0-9]', '', answer)
 
     if result == "":
