@@ -1,6 +1,6 @@
 # PiperBench
 A tragically simple Large Language Model benchmark.
-Model's are simply tested based on how well they can convert written forms of numbers to their digital forms
+Model's are tested on two very simple text generation tasks.
  # Current results
 The benchmark was run on a 3060 12gb, 32 gigabytes of ram at 3200MHz, and a AMD Ryzen 7 5700G.
 [text-generation-webui](https://github.com/oobabooga/text-generation-webui) was used for inference.
@@ -23,6 +23,7 @@ Parameters used:
 
  ## Correctness
 
+Correctness.py tests the model's accuracy on converting written text numbers to digits
 | Model | Accuracy | Iterations tested | Time elapsed |
 |--|--|--|--|
 |mixtral-8x7b-v0.1.Q3_K_M.gguf | 85.10% | 1000 | 0:56:00 |
@@ -32,6 +33,8 @@ Parameters used:
 |laserxtral-Q3_K_XS.gguf | 45.10% | 1000 | 0:36:00 |
 
  ## BasicMath
+
+BasicMath.py tests the model's ability to perform basic math operations
 | Model | Accuracy | Iterations tested | Time elapsed |
 |--|--|--|--|
 |mistral-7b-instruct-v0.2.Q5_K_M.gguf | 52.20% | 1000 | 0:13:56 |
